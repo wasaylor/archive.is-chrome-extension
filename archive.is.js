@@ -11,13 +11,13 @@ function archiveIsOnClickPage(info, tab) {
 }
 
 var id0 = chrome.contextMenus.create({
-	"title": "Archive.is this link",
+	"title": "Archive.is Link",
 	"contexts": ["link"],
 	"onclick": archiveIsOnClickLink
 });
 
 var id1 = chrome.contextMenus.create({
-	"title": "Archive.is this page",
+	"title": "Archive.is Page",
 	"contexts": ["page"],
 	"onclick": archiveIsOnClickPage
 })
