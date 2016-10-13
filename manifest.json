@@ -1,6 +1,6 @@
 {
   "name": "Archive.is",
-  "description": "",
+  "description": "An (unofficial) Archive.is chrome extension",
   "version": "0.1",
   "permissions": ["contextMenus"],
   "background": {
