@@ -1,7 +1,9 @@
 function archiveIsOnClickLink(info, tab) {
-	if (!info["linkUrl"]) { return; }
-
-	open('https://archive.is/?run=1&url=' + encodeURIComponent(info["linkUrl"]));
+	if (info["linkUrl"]) {
+		open('https://archive.is/?run=1&url=' + encodeURIComponent(info["linkUrl"]));
+	} else if (info["selectionText"]) {
+		open('https://archive.is/?run=1&url=' + encodeURIComponent(info["selectionText"]));
+	}
 }
 
 function archiveIsOnClickPage(info, tab) {
@@ -10,13 +12,19 @@ function archiveIsOnClickPage(info, tab) {
 	open('https://archive.is/?run=1&url=' + encodeURIComponent(info["pageUrl"]));
 }
 
-var id0 = chrome.contextMenus.create({
+// function waybackOnClickLink(info, tab) {
+
+
+// 	https://web.archive.org/save/
+// }
+
+chrome.contextMenus.create({
 	"title": "Archive.is Link",
-	"contexts": ["link"],
+	"contexts": ["link", "selection"],
 	"onclick": archiveIsOnClickLink
 });
 
-var id1 = chrome.contextMenus.create({
+chrome.contextMenus.create({
 	"title": "Archive.is Page",
 	"contexts": ["page"],
 	"onclick": archiveIsOnClickPage

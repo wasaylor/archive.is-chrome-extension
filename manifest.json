@@ -1,11 +1,12 @@
 {
-  "name": "Archive.is",
-  "description": "",
-  "version": "0.1",
-  "permissions": ["contextMenus"],
-  "background": {
-    "scripts": ["archive.is.js"]
-  },
-  "icons": { "128": "icon.png" },
-  "manifest_version": 2
+	"name": "Archive.is",
+	"description": "",
+	"version": "0.2",
+	"permissions": ["contextMenus"],
+	"background": {
+		"scripts": ["archive.is.js"]
+	},
+	"icons": { "128": "icon.png" },
+
+	"manifest_version": 2
 }
