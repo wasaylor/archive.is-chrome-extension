@@ -1,22 +1,26 @@
+function openArchiveIs(targeturl) {
+
+	var archiveisurl = new URL("/", "https://archive.is");
+
+	archiveisurl.searchParams.set('run', 1);
+	archiveisurl.searchParams.set('url', targeturl);
+
+	open(archiveisurl.href);
+}
+
 function archiveIsOnClickLink(info, tab) {
 	if (info["linkUrl"]) {
-		open('https://archive.is/?run=1&url=' + encodeURIComponent(info["linkUrl"]));
+		openArchiveIs(info["linkUrl"]);
 	} else if (info["selectionText"]) {
-		open('https://archive.is/?run=1&url=' + encodeURIComponent(info["selectionText"]));
+		openArchiveIs(info["selectionText"]);
 	}
 }
 
 function archiveIsOnClickPage(info, tab) {
-	if (!info["pageUrl"]) { return; }
-
-	open('https://archive.is/?run=1&url=' + encodeURIComponent(info["pageUrl"]));
+	if (info["pageUrl"]) {
+		openArchiveIs(info["pageUrl"]);
+	}
 }
-
-// function waybackOnClickLink(info, tab) {
-
-
-// 	https://web.archive.org/save/
-// }
 
 chrome.contextMenus.create({
 	"title": "Archive.is Link",
