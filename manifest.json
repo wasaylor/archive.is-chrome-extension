@@ -2,6 +2,7 @@
 	"name": "Archive.is",
 	"description": "An (unofficial) Archive.is chrome extension",
 	"version": "0.2",
+	"incognito": "split",
 	"permissions": ["contextMenus"],
 	"background": {
 		"scripts": ["archive.is.js"]
